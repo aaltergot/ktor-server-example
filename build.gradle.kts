@@ -4,5 +4,7 @@ allprojects {
     repositories {
         jcenter()
         maven(url = "http://kotlin.bintray.com/kotlin-eap")
+        maven(url = "https://dl.bintray.com/kotlin/ktor")
+        maven(url = "https://kotlin.bintray.com/kotlinx")
     }
 }

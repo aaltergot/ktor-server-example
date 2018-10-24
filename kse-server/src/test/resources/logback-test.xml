@@ -8,11 +8,6 @@
     </encoder>
   </appender>
 
-  <logger name="io.netty" additivity="false">
-    <level value="WARN"/>
-    <appender-ref ref="console"/>
-  </logger>
-
   <root level="DEBUG">
     <appender-ref ref="console"/>
   </root>

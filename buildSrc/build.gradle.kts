@@ -7,12 +7,12 @@ buildscript {
     }
 }
 
-apply(plugin = "kotlin-platform-jvm")
-
 repositories {
     jcenter()
     maven(url = "http://kotlin.bintray.com/kotlin-eap")
 }
+
+apply(plugin = "kotlin")
 
 dependencies {
     add("compile", kotlin("stdlib"))
