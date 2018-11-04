@@ -1,16 +1,13 @@
 package kse.server
 
 import com.typesafe.config.Config
-import io.ktor.config.HoconApplicationConfig
 import io.ktor.server.engine.applicationEngineEnvironment
 import io.ktor.server.engine.connector
 import io.ktor.server.engine.embeddedServer
-import io.ktor.server.engine.loadCommonConfiguration
-import io.ktor.server.netty.DevelopmentEngine
 import io.ktor.server.netty.Netty
 import kse.server.cli.KseCli
+import kse.server.di.ApplicationContext
 import mu.KotlinLogging
-import kse.server.web.kseServer
 import java.net.URL
 
 fun main(args: Array<String>) {
@@ -38,7 +35,7 @@ object Application {
                     host = cfg.getString("ktor.deployment.host")
                     port = cfg.getInt("ktor.deployment.port")
                 }
-                module { kseServer() }
+                module { ApplicationContext(cfg).applicationModule().setup(this) }
             }
         ).start()
     }

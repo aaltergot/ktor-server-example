@@ -32,5 +32,7 @@ dependencies {
     add("compile", Deps.apacheCommonsLang)
     add("compile", Deps.apacheCommonsText)
     add("compile", Deps.ktorNetty)
+    add("compile", Deps.ktorAuth)
     add("compile", Deps.serializationRuntime)
+    add("compile", Deps.kodeinJvm)
 }
